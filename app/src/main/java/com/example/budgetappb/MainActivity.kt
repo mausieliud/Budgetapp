@@ -1,5 +1,6 @@
 package com.example.budgetappb
 
+import BudgetBottomSheet
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -63,6 +64,12 @@ class MainActivity : AppCompatActivity() {
         btnAccept.setOnClickListener {
             val enteredNumber = tvDisplay.text.toString()
             Toast.makeText(this, "Entered: $enteredNumber", Toast.LENGTH_SHORT).show()
+        }
+        //button for open budget
+        val btnOpenBottomSheet: Button = findViewById(R.id.btnOpenBottomSheet)
+        btnOpenBottomSheet.setOnClickListener {
+            val bottomSheet = BudgetBottomSheet()
+            bottomSheet.show(supportFragmentManager, "BudgetBottomSheet")
         }
 
         //inside oncreate
